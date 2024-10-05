@@ -1,0 +1,19 @@
+server:
+  port: 8090
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui-custom.html
+  info:
+    title: Hexagonal Microservice Client
+    version: 1.0.0
+    description: API for managing client information
+    termsOfService: http://swagger.io/terms/
+    contact:
+      name: Developer Name
+      url: http://developer-website.com
+      email: developer@example.com
+    license:
+      name: Apache 2.0
+      url: http://springdoc.org
