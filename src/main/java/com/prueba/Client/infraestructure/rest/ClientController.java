@@ -8,6 +8,8 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ClientController {
 
     private final IClientHandler iClientHandler;
+    private static  final Logger LOGGER = LoggerFactory.getLogger(ClientController.class);
 
     @Operation(summary = "get Client")
     @ApiResponses(value = {
@@ -31,8 +34,11 @@ public class ClientController {
     public ResponseEntity<ClientResponse> getClient(  @RequestParam String documentType,
                                                       @RequestParam int documentNumber){
         if(documentType.isEmpty()){
+            LOGGER.error("Tipo de documento vacio");
             throw  new InvalidDocumentTypeException();
         }else {
+            LOGGER.info("Ejecutando desde "+ getClass() + " con info : Tipo de documento:" +documentType +
+                    "numero de documento: " + documentNumber);
             return ResponseEntity.ok(iClientHandler.getClient(documentType.charAt(0), documentNumber));
         }
     }

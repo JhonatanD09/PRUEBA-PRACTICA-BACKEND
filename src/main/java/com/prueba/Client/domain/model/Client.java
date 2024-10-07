@@ -3,7 +3,7 @@ package com.prueba.Client.domain.model;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-@RequiredArgsConstructor
+
 @Data
 public class Client {
 
@@ -17,4 +17,16 @@ public class Client {
     private char documentType;
     private int documentNumber;
 
+    public Client(String firstName, String secondName, String firstLastName, String secondLastName, String phoneNumber, String address,
+                        String city, char documentType, int documentNumber) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.firstLastName = firstLastName;
+        this.secondLastName = secondLastName;
+        this.phoneNumber = phoneNumber;
+        this.address = address;
+        this.city =city;
+        this.documentType =documentType;
+        this.documentNumber = documentNumber;
+    }
 }

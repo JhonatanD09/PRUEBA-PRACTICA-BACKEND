@@ -17,3 +17,6 @@ springdoc:
     license:
       name: Apache 2.0
       url: http://springdoc.org
+logging:
+  file:
+    name: myLog.log

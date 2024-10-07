@@ -9,6 +9,6 @@ public class Validators {
     }
 
     public static boolean isClientDocumentType(EntityClient client, char documentType){
-        return client.getDocumentType() == documentType;
+        return Character.toUpperCase(client.getDocumentType()) == Character.toUpperCase(documentType);
     }
 }

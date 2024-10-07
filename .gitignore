@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### LOG ###
+myLog.log
+myLog.log.2024-10-06.0.gz
